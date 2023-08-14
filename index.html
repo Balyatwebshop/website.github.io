@@ -1,1 +1,160 @@
-.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Információk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: black;
+      color: white;
+    }
+    
+    h1 {
+      color: white;
+    }
+    
+    p {
+      color: white;
+    }
+    
+    .navbar {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10px;
+      padding: 5px;
+      border-bottom: 2px solid transparent;
+      font-weight: bold;
+    }
+    
+    .navbar a.current {
+      color: white;
+      border-bottom: 2px solid white;
+      font-weight: bold;
+    }
+    
+    .navbar a:not(.current) {
+      color: gray;
+    }
+    
+    .navbar .icon {
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .time {
+      color: gray;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .gray-box {
+      width: 1400px;
+      height: 250px;
+      background-color: gray;
+      margin: 0 auto;
+      margin-top: 50px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .webshop-name {
+      font-weight: bold;
+      margin-right: auto;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+    
+    .navbar .links {
+      margin-left: auto;
+    }
+    
+    /* Stílusok a webshophoz */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:left;
+      align-items: flex-start;
+    }
+    
+    .product {
+      position: relative;
+      width: 200px;
+      margin: 10px;
+      overflow: hidden;
+    }
+    
+    .product img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+      border: 2px solid white;
+    }
+    
+    .product .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .product:hover .image-overlay {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    function updateTime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
+      document.getElementById('time').textContent = timeString;
+    }
+    
+    setInterval(updateTime, 1000); // Update the time every second
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="icon">&#9776;</div>
+    <div class="webshop-name">Balyát Webshop</div>
+    <div class="links">
+      <a href="index.html" class="current">FŐOLDAL</a>
+      <a href="ruhak.html">RUHÁK</a>
+      <a href="bejelentkezes.html">BEJELENTKEZÉS</a>
+      <a href="kapcsolat.html">KAPCSOLAT</a>
+      <span class="time" id="time"></span>
+    </div>
+  </div>
+  
+  <div class="gray-box"></div>
+  
+  <div class="product-container">
+    <div class="product">
+      <div class="image-overlay"></div>
+      <img src="kép1.webp" alt="Kép 1">
+    </div>
+    
+    <div class="product">
+      <div class="image-overlay"></div>
+      <img src="kép2.webp" alt="Kép 2">
+    </div>
+    
+    <!-- Ide másolj be további képek blokkjait -->
+  </div>
+  
+</body>
+  </html>
